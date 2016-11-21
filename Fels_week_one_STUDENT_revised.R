@@ -36,22 +36,17 @@
   # 6. Find a specific row or column in your data
   # 7. Use IF commands
   # 8. Sample your data
-  # 10. Read data from csv
+  # 10. Read data from csv files
 
-
-
-# If you are confused about a function type ?function_name into the 
-# command line and it will bring up a help menu. For example,
-?mean
-?round
-?which.max
 
 
 getwd()
-setwd("C:/Users/user/Desktop") # place your working directory into the
-# folder which has your data. I work with data that I put on the 
-# desktop so my directory is my desktop. note that R uses forward 
-# slash / on all platforms
+setwd("C:/Users/user/Desktop") 
+# The working directory is where R looks for files you want to load in,
+# and also where R will save files. 
+# For example, I keep my R files in a folder on my desktop so my
+# directory is "C:/Users/Samantha/Desktop/R Files"
+# Note that R uses forward slash / on all platforms
 
 # To do basic math in R, all you need to do is type the equation in the
 # command line Basic math
@@ -65,6 +60,12 @@ sqrt(2) # This square roots the number
 round(2.718281828,3) # This rounds the first number to the second 
 # number places. Try it with a different 
 # second number.
+
+# If you are confused about a function type ?function_name into the 
+# command line and it will bring up a help menu. For example,
+?mean
+?round
+?which.max
 
 # combine things together with c()
 # This lets you do an immense amount of functions to a large set
@@ -102,7 +103,7 @@ sum(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9))
 # are in a set of data.
 length(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9))
 
-# Staticial measures can be taken on lists of numbers. 
+# Statistical measures can be taken on lists of numbers. 
 mean(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9)) # This gives the mean number of 
 # the list
 median(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9)) # This gives the median number
@@ -118,9 +119,9 @@ which.min(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9))
 # sorting
 sort(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9)) # This sorts in increasing order
 sort(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9),decreasing = TRUE) # decreasing = TRUE 
-# sorts in decreasing
-# order
-# where is the ith biggest number?
+# sorts in decreasing order
+
+# where in my list is the ith biggest number?
 # order() is the same as sort except it gives you the place number
 # for the results. You see it gives 1 first, that corresponds to the
 # 1 that starts our list. It gives 5 second, that corresponds to the
@@ -128,7 +129,7 @@ sort(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9),decreasing = TRUE) # decreasing = TRUE
 # way to go to that place in the list later in this lesson. 
 order(c(1, 10, 3, 6, 2, 5, 8, 4, 7, 9))
 
-#  functions work on character strings
+# functions work on character strings
 my.states <- c("WA","DC","CA","PA","MD","VA","OH")
 # Paste lets you add words to words on the list. The following will
 # add ", USA" to the end of every word in our list
@@ -174,8 +175,10 @@ sd(a)
 
 
 # Indexing
-# This will call the item in the bracket from the object. In the next 
-# example it calls the 1st item from the object called "state_names"
+# Indexing refers to the place in an object (or dataframe, list, etc) where
+# data is found. 
+# This will call the item in the bracket from the object. 
+# For example, line 183 calls the 1st item from the object called "state_names"
 state_names <- c("WA","DC","CA","PA","MD","VA","OH")
 state_names[1] # This says the first value
 state_names[1:3] # This says values 1 to 3 
@@ -207,8 +210,8 @@ state_names[i[1:3]] # You can tie all these together and grab
 
 # 5. What are the last three states in alphabetical order?
 
-
-# Boolean means TRUE or FALSE answers. Binary possibility. 
+####################################################################################
+# Boolean logic allows us to work in binary terms of TRUE and FALSE. 
 # This is more powerful than it may seem at first. You will be 
 # using boolean values extensively when you begin cleaning up
 # and subsetting (dividing big pieces of data into smaller pieces)
@@ -299,7 +302,7 @@ a <- sample(1:6,size=1000,replace=TRUE)
 a
 
 # table tabulates the values
-# This will also be extremely important later in this class. It is an
+# This function is super helpful. You will learn to love it. It is an
 # easy way to look at lots of data together. This next line simply 
 # says how many of the 1000 samples landed in each number (we said
 # that it could only be numbers from 1 to 6). If you are looking at 
